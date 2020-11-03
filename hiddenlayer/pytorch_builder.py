@@ -22,6 +22,7 @@ FRAMEWORK_TRANSFORMS = [
     ht.Rename(op=r"Gemm", to=r"Linear"),
     # PyTorch layers that don't have an ONNX counterpart
     ht.Rename(op=r"aten::max\_pool2d\_with\_indices", to="MaxPool"),
+    ht.Rename(op=r"aten::feature\_dropout", to="Dropout"),
     # Shorten op name
     ht.Rename(op=r"BatchNormalization", to="BatchNorm"),
 ]
